@@ -1,0 +1,57 @@
+.back-modal {
+    position: fixed;
+    top: 0;
+    bottom: 0; right: 0;
+    overflow: auto;
+    padding: 20px;
+    transition: 0.3s background;
+    animation: modal  2s ease-in-out;
+    z-index: 999;
+}
+.modal {
+    min-width: 200px;
+    max-width: 400px;
+    box-shadow: 0 0 30px rgba(70, 70, 70, 1);
+    background: #252525;
+    font-size: 20px;
+    border-radius: 2px;
+    overflow: hidden;
+    float: right;
+}
+.modal-title {
+    background: #2196F3;
+    padding: 15px;
+}
+
+.modal-title svg {
+    margin-right: 5px;
+}
+
+.modal-body {
+    padding: 15px;
+    text-align: left;
+    /* overflow: auto; */
+}
+
+.modal-body input[type="text"], .modal-body input[type="password"] {
+    width: 100%;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}
+
+.modal-close {
+    
+    margin-left: 10px;
+    float: right;
+}
+
+.modal-hint, .modal .title-input {
+    background: #303030;
+    display: block;
+    padding: 5px 10px;
+    /* margin: 5px 0; */
+}
+
+.modal-hint {
+    margin-bottom: 10px;
+}

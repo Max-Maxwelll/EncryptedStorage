@@ -1,0 +1,230 @@
+*{
+	font-family: FuturaPTLight, Arial, Tahoma;
+	/* overflow: auto; */
+	box-sizing: border-box;
+    margin: 0;
+    color: white;
+    text-align: justify;
+}
+*::selection{
+	background: #2196F3;
+	color: black;
+}
+@font-face {
+    font-family: FuturaPTLight; /* Имя шрифта */
+    src: url(../fonts/FuturaPTLight.otf); /* Путь к файлу со шрифтом */
+}
+@font-face {
+    font-family: FuturaPTBook; /* Имя шрифта */
+    src: url(../fonts/FuturaPTBook.otf); /* Путь к файлу со шрифтом */
+}
+
+body {
+    background: #303030;
+}
+
+a {
+    text-decoration: none;
+}
+
+button, .label-button, input[type="submit"] {
+    display: table;
+    background: #2196F3;
+    border: 0;
+    border-radius: 2px;
+    padding: 10px 15px;
+    /* margin: 10px; */
+    font-size: 20px;
+    text-align: center;
+    cursor: pointer;
+    transition: 0.3s all;
+}
+
+button:hover, .label-button:hover, input[type="submit"]:hover {
+    box-shadow: 0 0 30px rgba(70, 70, 70, 1);
+}
+
+.button-red {
+    background: crimson;
+}
+
+input[type="text"], input[type="password"] {
+    background: #252525;
+    border: 0;
+    border-bottom: 2px solid #404040;
+    padding: 15px 15px;
+    /* margin-bottom: 5px; */
+    width: 90%;
+    font-size: 20px;
+    transition: none;
+    transition: 0.3s border-bottom;
+}
+
+input[type="text"]:focus, input[type="password"]:focus {
+    outline: 0;
+    border-bottom: 2px solid #2196F3;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active  {
+    box-shadow: 0 0 0 30px #252525 inset !important;
+    -webkit-box-shadow: 0 0 0 30px #252525 inset !important;
+    -webkit-text-fill-color: #2196F3;
+    transition: none;
+}
+
+input, input:-webkit-autofill {
+    color: white !important;
+}
+
+button svg, .label-button svg {
+    margin-right: 10px !important;
+}
+
+.label-button input[type="file"] {
+    display: none;
+}
+
+.block-sidebar {
+    background: #252525;
+    width: 200px;
+    height: 100vh;
+    float: left;
+    overflow: hidden;
+}
+
+.block-title {
+    display: block;
+    width: 100%;
+    padding: 20px;
+    background: #252525;
+}
+
+.block-title span {
+    padding-left: 20px;
+    text-transform: uppercase;
+}
+
+.block-content {
+    width: auto;
+    height: 100vh;
+    overflow: auto;
+}
+
+.block-content .content {
+    display: table;
+    padding: 20px;
+    font-size: 25px;
+}
+
+.block-content .content h1 {
+    display: block;
+}
+
+.button-panel-top {
+    width: 100%;
+    margin-bottom: 10px;
+    /* display: flex; */
+    /* justify-content: flex-end; */
+}
+
+.button-panel-bottom {
+    width: 100%;
+    margin-top: 10px;
+}
+
+.button-panel-left {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.button-panel-right{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.button-panel-left button {
+    margin: 0;
+    margin-right: 10px;
+}
+.button-panel-right button {
+    margin: 0;
+    margin-left: 10px;
+}
+
+.radio-panel {
+    /* background: #313131; */
+    border-bottom: 2px solid #2196F3;
+    border-radius: 2px;
+    margin-bottom: 5px;
+    padding: 10px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.title-panel {
+    display: block;
+    padding: 20px 0;
+    text-transform: uppercase;
+}
+
+.content-link, .modal-body a, .auth-panel a {
+    display: block;
+    font-size: 20px;
+    padding-bottom: 20px;
+    cursor: pointer;
+    transition: 0.3s color;
+}
+
+.content-link:hover, .modal-body a:hover, .auth-panel a:hover {
+    color: #59b4ff;
+}
+
+.validator-message {
+    display: block;
+    width: 100%;
+    margin: 0 20px;
+    padding: 10px 0;
+    font-size: 15px;
+    color: crimson;
+    opacity: 1;
+    animation: growing 0.3s ease-in;
+    /* -webkit-transition: max-height 0.5s ease-in 0.2s;
+    transition: max-height 0.5s ease-in 0.2s; */
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #252525; 
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #555; 
+    border-radius: 2px;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #2196F3; 
+  }
+
+  @keyframes growing {
+      0% {
+        max-height: 0px;
+        padding: 0px;
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+        max-height: 999px;
+        padding: 10px 0;
+      }
+  }

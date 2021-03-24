@@ -1,0 +1,24 @@
+<link rel="stylesheet" href="/content/css/directives/modal.directive.css">
+<div class="back-modal" ng-if="isshow">
+    <div class="modal">
+        <div class="modal-title">
+            <i class="fas fa-pen"></i>
+            {{title}}
+            <a class="modal-close" href="" ng-click="close()" title="Закрыть"><i class="fas fa-times"></i></a>
+        </div>
+        <div class="modal-body">
+            <span class="modal-hint">{{message}}</span>
+            <div class="button-panel-top">
+                <input type="text" placeholder="ID пользователя" value="Maxwell" disabled>
+            </div>
+            <div class="button-panel-top">
+                <input type="text" placeholder="E-mail">
+            </div>
+            <a ng-click="sendConfirm()">Отправить подтверждение</a>
+            <div class="button-panel-right button-panel-bottom">
+                <!-- <button ng-click="changePassport()"><i class="far fa-edit"></i>Изменить</button> -->
+                <button ng-click="createPassport()"><i class="fas fa-pen"></i>Изменить</button>
+            </div>
+        </div>
+    </div>
+</div>

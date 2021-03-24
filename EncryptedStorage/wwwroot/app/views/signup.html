@@ -1,0 +1,20 @@
+<link rel="stylesheet" href="../../../content/css/auth.css">
+<!-- <div class="block-title"><span>Авторизация</span></div> -->
+<div class="content auth-content">
+    <form class="auth-panel" name="authPanel">
+        <span class="auth-panel_title">Регистрация</span>
+        <label class=""></label>
+        <input name="name" type="text" placeholder="ID пользователя" ng-model="registerModel.UserName" require pattern="#[A-Za-z0-9]{6,20}">
+        <p class="validator-message" ng-if="authPanel.name.$invalid && !authPanel.name.$pristine">Требуется символ # в начале</p>
+        <input name="email" type="text" placeholder="E-mail" ng-model="registerModel.Email" require pattern="[A-Za-z0-9]+@[A-Za-z]{2,}\.[A-Za-z]{2,}">
+        <p class="validator-message" ng-if="authPanel.email.$invalid && !authPanel.email.$pristine">Неверный фрмат E-mail</p>
+        <input name="password" type="password" placeholder="Пароль" ng-model="registerModel.Password" require pattern="(?=.*[A-Z])(?=.*[0-9])[A-Za-z0-9]{8,25}">
+        <p class="validator-message" ng-if="authPanel.password.$invalid && !authPanel.password.$pristine">Мин. 8 символов макс. 25, буква верхнего регистра и цифра</p>
+        <input name="passwordConfirm" type="password" placeholder="Повторить пароль" ng-model="registerModel.ConfirmPassword" require pattern="(?=.*[A-Z])(?=.*[0-9])[A-Za-z0-9]{8,25}">
+        <p class="validator-message" ng-if="authPanel.passwordConfirm.$invalid && !authPanel.passwordConfirm.$pristine">Мин. 8 символов макс. 25, буква верхнего регистра и цифра</p>
+        <button type="submit" ng-click="submit(authPanel)">Создать</button>
+    </form>
+</div>
+<div>
+    <modal-message title="{{titleMessage}}" message="message" isshow="isshowMessage"></modal-change-account>
+</div>

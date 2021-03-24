@@ -1,0 +1,22 @@
+<div ng-transclude ng-click="Show()"></div>
+<link rel="stylesheet" href="/content/css/directives/modal.directive.css">
+<div class="back-modal" ng-if="isshow">
+    <div class="modal">
+        <div class="modal-title">
+            <i class="far fa-edit"></i>
+            Изменить аккаунт
+            <a class="modal-close" href="" ng-click="Show()" title="Закрыть"><i class="fas fa-times"></i></a>
+        </div>
+        <div class="modal-body">
+            <span class="modal-hint">Внесите новые данные</span>
+            <input type="text" placeholder="Имя сайта" ng-model="account.name">
+            <input type="text" placeholder="Адрес" ng-model="account.url">
+            <input type="text" placeholder="Логин" ng-model="account.login">
+            <input type="password" placeholder="Пароль" ng-model="account.password">
+            <div class="button-panel-right button-panel-bottom">
+                <button ng-click="Change(account)"><i class="fas fa-check"></i> Изменить</button>
+                <button class="button-red" ng-confirm="Вы уверены что хотите удалить хранилище?" ng-function="Delete(account.id)"><i class="fas fa-trash"></i> Удалить</button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,18 @@
+<div ng-transclude ng-click="Open()"></div>
+<link rel="stylesheet" href="/content/css/directives/modal.directive.css">
+<div class="back-modal" ng-if="isshow">
+    <div class="modal">
+        <div class="modal-title">
+            <i class="fas fa-key"></i>
+            Подтверждение действия
+            <a class="modal-close" href="" ng-click="Open()" title="Закрыть"><i class="fas fa-times"></i></a>
+        </div>
+        <div class="modal-body">
+            <span class="modal-hint">{{message}}</span>
+            <input type="password" placeholder="Пароль" ng-model="confirmModel.Password">
+            <div class="button-panel-right button-panel-bottom">
+                <button type="submit" ng-click="Submit()"><i class="fas fa-check"></i> Отправить</button>
+            </div>
+        </div>
+    </div>
+</div>

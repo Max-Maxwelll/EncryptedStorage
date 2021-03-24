@@ -1,0 +1,53 @@
+.block-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.auth-panel {
+    background: #252525;
+    max-width: 350px;
+    text-align: left;
+    border-radius: 2px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.auth-panel input[type="text"], .auth-panel input[type="password"], .auth-panel button {
+    width: 100%;
+}
+
+.auth-panel button, .auth-panel input[type="submit"] {
+    width: 90%;
+    margin: 5%;
+}
+
+.auth-panel_checkbox {
+    width: 100%;
+    display: block;
+    padding: 0 20px;
+    padding-top: 10px;
+    font-size: 20px;
+}
+
+.auth-panel_title {
+    display: block;
+    background: #2196F3;
+    width: 100%;
+    padding: 15px;
+    text-align: center;
+}
+
+input[type="text"], input[type="password"] {
+    margin: 0 5%;
+    margin-top: 5%;
+}
+
+.auth-panel a {
+    width: 100%;
+    padding: 0 20px;
+    padding-top: 10px;
+}

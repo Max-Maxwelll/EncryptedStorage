@@ -1,0 +1,49 @@
+<link rel="stylesheet" href="../../../content/css/directives/sidebar.directive.css">
+<link rel="stylesheet" href="../../../content/css/directives/block-storage.directive.css">
+<div class="sidebar">
+    <span class="sidebar-logo">
+        <i class="fas fa-box"></i>
+        Encrypted Storage
+    </span>
+    <div class="user-profile" ng-if="AUTH">
+        <span class="user-profile-name">{{USER.userName}}</span>
+        <a href="" class="user-profile-exit" ng-click="Logout()" title="Выход"><i class="fas fa-sign-out-alt"></i></a>
+    </div>
+    <span class="sidebar-title-section" ng-if="AUTH">Страницы</span>
+    <div class="sidebar-menu" ng-if="AUTH">
+        <a href="#!/" class="link">Хранилища</a>
+        <a href="#!/accounts" class="link">Аккаунты</a>
+        <a href="#!/files" class="link">Файлы</a>
+        <!-- <a class="link" href="#!/coins">ID карты</a> -->
+        <!-- <a class="link" href="#!/passports">Паспорта</a> -->
+        <ul class="link">Профиль
+            <i class="fas fa-caret-up"></i>
+            <i class="fas fa-caret-down"></i>
+            <ul class="menu-list-content">
+                <li ng-click="ChangeEmail()">E-mail</li>
+                <li ng-click="ChangePassword()">Пароль</li>
+            </ul>
+        </ul>
+        
+    </div>
+    <span class="sidebar-title-section" ng-if="AUTH">Список хранилищ</span>
+    <div class="block-storages" ng-if="AUTH" ng-if="isLoadStorages">
+        <div ng-repeat="storage in storages" ng-key="storage">
+            <a class="block-storages-link">{{storage.name}}</a>
+        </div>
+    </div>
+    
+    <div class="sidebar-auth">
+        <button class="sidebar-button" ng-if="!AUTH"><a class="link" href="#!/signin">Войти</a></button>
+        <button class="sidebar-button" ng-if="!AUTH"><a class="link" href="#!/signup">Регистрация</a></button>
+    </div>
+</div>
+<div>
+    <modal-key-storage title="Ключ шифрования" message="Введите ключ шифрования" password="password" isValid="isValid" isshow="isshowKey"></modal-create-account>
+</div>
+<div>
+    <modal-change-password title="Новый пароль" message="Введите старый пароль, новый и повторите новый" isshow="isshowChangePassword"></modal-create-account>
+</div>
+<div>
+    <modal-change-email title="Работа с E-mail" message="Подтвержение, изменение email" isshow="isshowChangeEmail"></modal-create-account>
+</div>

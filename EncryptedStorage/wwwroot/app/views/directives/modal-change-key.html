@@ -1,0 +1,23 @@
+<div ng-transclude ng-click="Show()"></div>
+<link rel="stylesheet" href="/content/css/directives/modal.directive.css">
+<div class="back-modal" ng-if="isshow">
+    <div class="modal">
+        <div class="modal-title">
+            <i class="far fa-edit"></i>
+            Изменить ключ хранилища
+            <a class="modal-close" href="" ng-click="Show()" title="Закрыть"><i class="fas fa-times"></i></a>
+        </div>
+        <div class="modal-body">
+            <span class="modal-hint">Введите старый и новый ключ
+                <p>Длина ключа (16, 24, 32) символа</p>
+            </span>
+            <input type="password" placeholder="Старый ключ" ng-model="changeKeyModel.OldKey">
+            <input type="password" placeholder="Новый ключ" ng-model="changeKeyModel.NewKey">
+            <input type="password" placeholder="Повторить ключ" ng-model="changeKeyModel.ConfirmKey">
+            <div class="button-panel-right button-panel-bottom">
+                <button type="submit" ng-click="Submit()"><i class="fas fa-check"></i> Изменить</button>
+                <!-- <button class="button-red"><i class="fas fa-trash"></i> Удалить</button> -->
+            </div>
+        </div>
+    </div>
+</div>

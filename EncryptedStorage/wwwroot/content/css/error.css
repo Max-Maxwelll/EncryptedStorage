@@ -1,0 +1,15 @@
+.block-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.content {
+    text-align: center;
+}
+.error-message {
+    text-transform: uppercase;
+}
+
+.error-404 {
+    color: #2196F3;
+}

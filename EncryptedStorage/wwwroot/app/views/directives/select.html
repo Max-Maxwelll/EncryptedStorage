@@ -1,0 +1,16 @@
+<link rel="stylesheet" href="css/directives/select.directive.css">
+<div class="select-main" ng-mouseleave="blur()" ng-mouseenter="mouseenter()">
+    
+    <div class="select" title="{{selected.label}}">
+        <span class="select-title">{{selected.label}}</span>
+        <span class="select-arrow select-arrow-off" ng-click="showOptions()">
+        </span>
+    </div>
+    <!-- <div class="select-backdrop"></div> -->
+    <div class="select-options">
+        <div ng-repeat="option in options" ng-click="optionClick(option)">{{option.label}}
+        </div>
+    </div>
+    <div class="select-hint" >{{title}}</div>
+</div>
+<select ng-options="option.value as option.label for option in options" ng-model="selected"></select>

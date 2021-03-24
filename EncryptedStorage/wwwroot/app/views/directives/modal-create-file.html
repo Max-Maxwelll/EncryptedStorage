@@ -1,0 +1,23 @@
+<div ng-transclude ng-click="Show()"></div>
+<link rel="stylesheet" href="/content/css/directives/modal.directive.css">
+<div class="back-modal" ng-if="isshow">
+    <div class="modal">
+        <div class="modal-title">
+            <i class="fas fa-plus"></i>
+            Создать файл
+            <a class="modal-close" href="" ng-click="Show()" title="Закрыть"><i class="fas fa-times"></i></a>
+        </div>
+        <form class="modal-body" method="post" enctype="multipart/form-data">
+            <span class="modal-hint">Загрузите файл и укажите имя</span>
+            <input type="text" placeholder="Название файла" ng-model="fileName">
+            
+            <div class="button-panel-right button-panel-bottom">
+                <label class="label-button">
+                    <input type="file" onchange="angular.element(this).scope().Upload(angular.element(this).scope().fileName, event.target.files)">
+                    <i class="fas fa-check"></i>Выбрать файл
+                </label>
+                <!-- <button type="submit"><i class="fas fa-check"></i>Создать</button> -->
+            </div>
+        </form>
+    </div>
+</div>

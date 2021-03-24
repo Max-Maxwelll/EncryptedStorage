@@ -1,0 +1,39 @@
+<link rel="stylesheet" href="/content/css/directives/modal.directive.css">
+<div class="back-modal" ng-if="isshow">
+    <div class="modal">
+        <div class="modal-title">
+            <i class="far fa-edit"></i>
+            {{title}}
+            <a class="modal-close" href="" ng-click="close()" title="Закрыть"><i class="fas fa-times"></i></a>
+        </div>
+        <div class="modal-body">
+            <span class="modal-hint">{{message}}</span>
+            <input type="text" placeholder="Национальность" ng-model="passport.nationality">
+            <input type="text" placeholder="Номер паспорта" ng-model="passport.number">
+            <input type="text" placeholder="Полное имя" ng-model="passport.fullname">
+            <div class="radio-panel">
+                <span>Пол</span>
+                <div>
+                    <input type="radio" ng-model="passport.gender" value="male">
+                    <span>Муж</span>
+                </div>
+                <div>
+                    <input type="radio" ng-model="passport.gender" value="femaly">
+                    <span>Жен</span>
+                </div>
+            </div>
+            <span class="title-input">Дата рождения</span>
+            <input type="text" placeholder="00.00.0000" ng-model="passport.birth">
+            <input type="text" placeholder="Место выдачи" ng-model="passport.placeIssue">
+            <span class="title-input">Дата выдачи</span>
+            <input type="text" placeholder="00.00.0000" ng-model="passport.dateIssue">
+            <span class="title-input">Дата истечения</span>
+            <input type="text" placeholder="00.00.0000" ng-model="passport.expirationDate">
+            <div class="button-panel-right button-panel-bottom">
+                <button><i class="fas fa-check"></i> Изменить</button>
+                <button class="button-red"><i class="fas fa-trash"></i> Удалить</button>
+            </div>
+            
+        </div>
+    </div>
+</div>

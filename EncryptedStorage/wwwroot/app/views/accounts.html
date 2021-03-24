@@ -1,0 +1,49 @@
+<link rel="stylesheet" href="/content/css/account.css">
+<div class="block-title" ng-if="AUTH"><span><i class="far fa-user-circle"></i> Работа с аккаунтами</span></div>
+<div class="content" ng-if="AUTH">
+    <div class="button-panel-top button-panel-left">
+        <!-- <button ng-click="changeAccount()"><i class="far fa-edit"></i>Изменить</button> -->
+        <button ng-create-account><i class="fas fa-plus"></i>Создать</button>
+        <!-- <button ng-click="LoadAccounts()"><i class="fas fa-sync"></i>Загрузить</button> -->
+        <div ng-confirm="Вы уверены что хотите удалить все аккаунты?" ng-function="DeleteAll()">
+                <button class="button-red"><i class="fas fa-trash"></i>Удалить все</button>
+            </div>
+    </div>
+    <table class="table table-accounts">
+        <tr class="table_header">
+            <th>Название</th>
+            <th>Адрес</th>
+            <th>Логин</th>
+            <th><i class="fas fa-key"></i></th>
+            <th title="Изменить аккаунт" style="text-align: center;"><i class="far fa-edit"></i></th>
+            <!-- <th title="Удалить аккаунт" style="text-align: center;"><i class="fas fa-trash"></i></th> -->
+        </tr>
+        <tr ng-repeat="account in accounts">
+            <td>
+                <div class="table-icon">
+                <p><a href="" ng-copy>{{account.name}}</a></p>
+                </div>
+            </td>
+            <td><a href="//{{account.url}}">{{account.url}}</a></td>
+            <td><a href="" ng-click="" ng-copy>{{account.login}}</a></td>
+            <td title="Копировать пароль {{account.name}}" class="table-func-tr">
+                <a href="" ng-confirm="Для копирования введите пароль учетной записи" ng-function="CopyPassword(account.id)">
+                        <i class="fas fa-copy"></i>
+                </a>
+            </td>
+            <td title="Изменить аккаунт {{account.name}}" class="table-func-tr">
+                <a href="" ng-change-account="account">
+                    <i class="fas fa-edit"></i>
+                </a>
+            </td>
+            <!-- <td title="Удалить аккаунт {{accaunt.name}}" class="table-func-tr">
+                <a href="" ng-confirm="Вы уверены что хотите удалить хранилище?" ng-function="Delete(account.id)">
+                    <i class="fas fa-times-circle"></i>
+                </a>
+            </td> -->
+        </tr>
+    </table>
+</div>
+<div>
+    <modal-change-account title="Изменение записи" message="Измените данные аккаунта" account="accountChange" isshow="isshowChange"></modal-change-account>
+</div>

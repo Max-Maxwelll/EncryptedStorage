@@ -1,0 +1,48 @@
+<link rel="stylesheet" href="/content/css/account.css">
+<div class="block-title"><span><i class="fas fa-passport"></i> Работа с паспортами</span></div>
+<div class="content">
+    <div class="button-panel">
+    </div>
+    <div class="button-panel-top">
+        <!-- <button ng-click="changePassport()"><i class="far fa-edit"></i>Изменить</button> -->
+        <button ng-click="createPassport()"><i class="fas fa-plus"></i>Создать</button>
+    </div>
+    <table class="table table-passports">
+        <tr class="table_header">
+            <th>Национальность</th>
+            <th>Ф.И.О</th>
+            <th>Пол</th>
+            <th>Дата рождения</th>
+            <th style="text-align: center;"><i class="far fa-edit"></i></th>
+        </tr>
+        <tr>
+            <td>
+                <div class="table-icon">
+                    <p>Украина</p>
+                </div>
+            </td>
+            <td>Шарацкий Максим Вячеславович</td>
+            <td>Муж</td>
+            <td>14.04.1999</td>
+            <td><a href="" ng-click="changePassport()">Изменить</a></td>
+        </tr>
+        <tr>
+            <td>
+                <div class="table-icon">
+                    <p>Россия</p>
+                </div>
+            </td>
+            <td>Попов Павел Александрович</td>
+            <td>Муж</td>
+            <td>20.12.1995</td>
+            <td><a href="" ng-click="changePassport()">Изменить</a></td>
+        </tr>
+    </table>
+</div>
+<!-- <modal-message title="Сообщение" message="Текст"></modal> -->
+<div>
+    <modal-change-passport title="Изменить пасспорт" message="Измените данные паспорта" passport="passportChange" isshow="isshowChange"></modal-change-account>
+</div>
+<div>
+    <modal-create-passport title="Создать пасспорт" message="Внесите данные" passport="passportCreate" isshow="isshowCreate"></modal-create-account>
+</div>

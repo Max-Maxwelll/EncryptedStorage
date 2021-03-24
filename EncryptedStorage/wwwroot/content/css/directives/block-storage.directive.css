@@ -1,0 +1,22 @@
+.block-storages {
+    padding: 10px;
+    height: 150px;
+}
+.block-storages-link {
+    width: 100%;
+    display: block;
+    border-radius: 2px;
+    border-bottom: 1px solid #353535;
+    padding: 10px 0;
+    transition: 0.3s all;
+    cursor: pointer;
+    text-align: center;
+}
+
+.block-storages-link:last-child {
+    border-bottom: 1px solid transparent;
+}
+
+.block-storages-link:hover {
+    border-bottom: 1px solid gray !important;
+}

@@ -1,0 +1,52 @@
+<link rel="stylesheet" href="/content/css/storages.css">
+<div class="block-title" ng-if="AUTH"><span><i class="far fa-user-circle"></i> Работа с хранилищами</span></div>
+<div class="content" ng-if="AUTH">
+    <div class="button-panel-top button-panel-left">
+        <div ng-create-storage>
+            <button><i class="fas fa-plus"></i>Создать</button>
+        </div>
+        <!-- <button ng-click="DownloadStorage()"><i class="fas fa-file-download"></i>Скачать все</button> -->
+        <div ng-confirm="Вы уверены что хотите удалить хранилище?" ng-function="DeleteAllStorage()">
+            <button class="button-red"><i class="fas fa-trash"></i>Удалить все</button>
+        </div>
+    </div>
+    <table class="table table-passports">
+        <tr class="table_header">
+            <!-- <th>№</th> -->
+            <th>Название</th>
+            <th title="Учетные записи"><i class="fas fa-user-circle"></i></th>
+            <th title="Документы" style="text-align: center;"><i class="fas fa-file-alt"></i></th>
+            <th title="Изображения" style="text-align: center;"><i class="fas fa-file-image"></i></th>
+            <th title="Аудиозаписи" style="text-align: center;"><i class="fas fa-file-audio"></i></th>
+            <th title="Изменить ключ хранилища" style="text-align: center;"><i class="fas fa-key"></i></th>
+            <!-- <th title="Скачать хранилище" style="text-align: center;"><i class="fas fa-file-download"></i></th> -->
+            <th title="Удалить хранилище" style="text-align: center;"><i class="fas fa-trash"></i></th>
+        </tr>
+        <tr ng-repeat="storage in storages">
+            <!-- <td>{{storage.id}}</td> -->
+            <td>{{storage.name}}</td>
+            <td>{{storage.countAccaunts}}</td>
+            <td>{{storage.countDocuments}}</td>
+            <td>{{storage.countImages}}</td>
+            <td>{{storage.countAudio}}</td>
+            <td title="Изменить ключ хранилища {{storage.name}}" class="table-func-tr">
+                <a href="" ng-change-key="storage">
+                    <i class="fas fa-edit"></i>
+                </a>
+            </td>
+            <!-- <td title="Скачать хранилище {{storage.name}}" class="table-func-tr">
+                <a href="" ng-click="DownloadStorage()">
+                    <i class="fas fa-arrow-alt-circle-down"></i>
+                </a>
+            </td> -->
+            <td title="Удалить хранилище {{storage.name}}" class="table-func-tr">
+                <a href="" ng-confirm="Вы уверены что хотите удалить хранилище?" ng-function="DeleteStorage(storage)">
+                    <i class="fas fa-times-circle"></i>
+                </a>
+            </td>
+        </tr>
+        <tr ng-if="storages.length == 0">
+            <th class="table-empty" colspan="9">Список хранилищ пуст</td>
+        </tr>
+    </table>
+</div>

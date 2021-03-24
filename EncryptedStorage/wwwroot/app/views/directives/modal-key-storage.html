@@ -1,0 +1,27 @@
+<div ng-transclude ng-click="Show()"></div>
+<link rel="stylesheet" href="/content/css/directives/modal.directive.css">
+<div class="back-modal" ng-if="isshow">
+    <div class="modal">
+        <div class="modal-title">
+            <i class="fas fa-key"></i>
+            Введите ключ хранилища
+            <a class="modal-close" href="" ng-click="Show()" title="Закрыть"><i class="fas fa-times"></i></a>
+        </div>
+        <form class="modal-body" method="post" enctype="multipart/form-data">
+            <span class="modal-hint">
+                Вы должны ввести ключ либо загрузить файл с ним
+            </span>
+            <input type="password" placeholder="Ключ" ng-model="keyModel.Key">
+            
+            <div class="button-panel-right button-panel-bottom">
+                <!-- <label class="label-button">
+                    <input type="file" ng-file-read>
+                    <input type="file" onchange="angular.element(this).scope().Upload(event.target.files)">
+                    <i class="fas fa-file"></i>
+                    Загрузить ключ
+                </label> -->
+                <button type="submit" ng-click="Submit()"><i class="fas fa-check"></i> Отправить</button>
+            </div>
+        </form>
+    </div>
+</div>

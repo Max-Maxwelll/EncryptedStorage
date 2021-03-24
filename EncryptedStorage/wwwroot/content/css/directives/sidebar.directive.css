@@ -1,0 +1,136 @@
+.sidebar { 
+    width: 200px;
+    height: 100vh;
+    overflow: auto;
+}
+
+.sidebar-logo {
+    background: #2196F3;
+    display: block;
+    width: 100%;
+    padding: 20px 0;
+    text-align: center; 
+    text-transform: uppercase;
+}
+
+.sidebar-menu {
+    font-size: 20px;
+    width: 100%;
+    /* display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap; */
+}
+.sidebar-menu .link {
+    display: block;
+    width: 100%;
+    padding: 20px 30px;
+    /* padding-left: 30px; */
+    position: relative;
+    cursor: pointer;
+    transition: 0.3s all;
+}
+.sidebar-menu .link::after {
+    content: '';
+    background: #2196F3;
+    position: absolute;
+    left: 0; top: 0;
+    bottom: 0;
+    width: 0;
+    overflow: hidden;
+    transition: 0.3s all;
+}
+.sidebar-menu .link:hover::after {
+    width: 5px;
+}
+
+.sidebar-menu .link svg {
+    float: right;
+}
+
+.sidebar-menu .link .fa-caret-up {
+    display: none;
+}
+
+.sidebar-menu .link:hover .fa-caret-down {
+    display: none;
+}
+
+.sidebar-menu .link:hover .fa-caret-up {
+    display: block;
+}
+
+.sidebar .sidebar-button {
+    padding: 0;
+    display: block;
+    width: 90%;
+    margin: 5%;
+}
+
+.sidebar .sidebar-button a {
+    display: block;
+    padding: 10px 15px;
+    text-align: center;
+}
+
+.sidebar-title-section {
+    display: block;
+    padding: 15px 0;
+    margin-bottom: 10px;
+    /* margin: 10px 10px; */
+    background: #292929;
+    /* border-bottom: 1px solid #323232; */
+    font-size: 15px;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.link ul {
+    max-height: 0;
+    overflow: hidden;
+    padding: 0;
+    margin: 0;
+    -webkit-transition: max-height 0.5s ease-in 0.2s;
+    transition: max-height 0.5s ease-in 0.2s;
+}
+
+.link ul:hover, .link:hover > ul {
+    max-height: 500px;
+}
+
+.link ul li:first-child {
+    padding-top: 20px;
+}
+
+.link ul li {
+    list-style: none;
+    padding: 10px 0;
+    color: #909090;
+    font-size: 18px;
+    -webkit-transition: color 0.3s ease-in;
+    transition: color 0.3s ease-in;
+}
+
+.link ul li:hover {
+    color: white;
+}
+
+.user-profile {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px;
+}
+
+.user-profile-name {
+    max-width: 120px;
+    overflow: hidden;
+}
+
+.user-profile-exit {
+    display: table;
+    float: right;
+    background: #2196F3;
+    padding: 5px 8px;
+    border-radius: 2px;
+}

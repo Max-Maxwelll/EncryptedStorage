@@ -1,0 +1,15 @@
+<link rel="stylesheet" href="../../../content/css/auth.css">
+<!-- <div class="block-title"><span>Авторизация</span></div> -->
+<div class="content auth-content">
+    <form class="auth-panel" name="authPanel">
+        <span class="auth-panel_title">Авторизация</span>
+        <input name="name" type="text" ng-model="loginModel.UserName" placeholder="ID пользователя" require pattern="#[A-Za-z0-9]{6,20}">
+        <p class="validator-message" ng-if="authPanel.name.$invalid && !authPanel.name.$pristine">Требуется символ # в начале</p>
+        <input name="password" type="password" ng-model="loginModel.Password" placeholder="Пароль" require pattern="(?=.*[A-Z])(?=.*[0-9])[A-Za-z0-9]{8,25}">
+        <p class="validator-message" ng-if="authPanel.password.$invalid && !authPanel.password.$pristine">Мин. 8 символов макс. 25, буква верхнего регистра и цифра</p>
+        <span class="auth-panel_checkbox"><input type="checkbox" ng-model="loginModel.RememberMe"> Запомнить</span>
+        <a ng-click="forgotPassword()">Забыл пароль?</a>
+        
+        <button type="submit" ng-click="submit(authPanel)">Войти</button>
+    </form>
+</div>

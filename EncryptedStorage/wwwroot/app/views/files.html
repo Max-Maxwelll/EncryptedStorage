@@ -1,0 +1,61 @@
+<link rel="stylesheet" href="/content/css/files.css">
+<div class="block-title" ng-if="AUTH"><span><i class="far fa-user-circle"></i> Работа с файлами</span></div>
+<div class="content" ng-if="AUTH">
+    <div class="button-panel-top">
+        <!-- <button ng-click="changeAccount()"><i class="far fa-edit"></i>Изменить</button> -->
+        <button ng-create-file><i class="fas fa-file-upload"></i>Создать</button>
+        <!-- <button ng-click="addAccount()"><i class="fas fa-file-download"></i>Скачать</button> -->
+        <!-- <button>Удалить</button> -->
+        <!-- <button><i class="fas fa-key"></i> Получить данные</button> -->
+    </div>
+    <span class="title-panel" ng-show="files == undefined || files[0] == undefined">В этом хранилише еще нет файлов</span>
+    <span class="title-panel" ng-hide="files == undefined || files[0] == undefined">Документы</span>
+    <div class="block-files">
+        <div class="item-file" ng-repeat="file in files" ng-if="file.group == 'application' || file.group == 'text'">
+            <span class="item-file-type">{{file.type}}</span>
+            <span class="item-file-size">{{file.size}} Mb</span>
+            <span class="item-file-name">{{file.name}}</span>
+            <div class="item-file-tool">
+                <div ng-confirm="Вы уверены что хотите удалить хранилище?" ng-function="GetDecryptFile(file.name)">
+                    <a class="item-file-button" name="DecryptFile" href="" title="Скачать расшифрованное"><i class="fas fa-unlock"></i></a>
+                </div>
+                <div ng-confirm="Вы уверены что хотите удалить хранилище?" ng-function="GetEncryptFile(file.name)">
+                    <a class="item-file-button" name="EncryptFile" href="" title="Скачать зашифрованное"><i class="fas fa-lock"></i></a>
+                </div>
+                <div ng-confirm="Вы уверены что хотите удалить файл?" ng-function="Delete(file.name)">
+                    <a class="item-file-button" href="" title="Удалить"><i class="fas fa-times"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <span class="title-panel" ng-hide="files == undefined || files[0] == undefined">Аудиозаписи</span>
+    <div class="block-files">
+        <div class="item-file" ng-repeat="file in files" ng-if="file.group == 'audio'">
+            <span class="item-file-type">{{file.type}}</span>
+            <span class="item-file-size">{{file.size}} Mb</span>
+            <span class="item-file-name">{{file.name}}</span>
+            <div class="item-file-tool">
+                <a class="item-file-button" href="" title="Скачать расшифрованное" ng-download="{{file.name}}" ng-encrypt="false"><i class="fas fa-unlock"></i></a>
+                <a class="item-file-button" href="" title="Скачать зашифрованное" ng-download="{{file.name}}" ng-encrypt="true"><i class="fas fa-lock"></i></a> 
+                <div ng-confirm="Вы уверены что хотите удалить файл?" ng-function="Delete(file.name)">
+                    <a class="item-file-button" href="" title="Удалить"><i class="fas fa-times"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <span class="title-panel" ng-hide="files == undefined || files[0] == undefined">Изображения</span>
+    <div class="block-files">
+        <div class="item-file" ng-repeat="file in files" ng-if="file.group == 'image'">
+            <span class="item-file-type">{{file.type}}</span>
+            <span class="item-file-size">{{file.size}} Mb</span>
+            <span class="item-file-name">{{file.name}}</span>
+            <div class="item-file-tool">
+                <a class="item-file-button" href="" title="Скачать расшифрованное" ng-download="{{file.name}}" ng-encrypt="false"><i class="fas fa-unlock"></i></a>
+                <a class="item-file-button" href="" title="Скачать зашифрованное" ng-download="{{file.name}}" ng-encrypt="true"><i class="fas fa-lock"></i></a> 
+                <div ng-confirm="Вы уверены что хотите удалить файл?" ng-function="Delete(file.name)">
+                    <a class="item-file-button" href="" title="Удалить"><i class="fas fa-times"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
