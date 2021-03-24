@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26730.15
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EncryptedStorage", "EncryptedStorage\EncryptedStorage.csproj", "{1BFC4ED0-057E-4D6E-A049-BBE95061E1D4}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EncryptedStorage.Service", "EncryptedStorage.Service\EncryptedStorage.Service.csproj", "{30775024-714A-4F97-BC63-C65FABD03DE6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EncryptedStorage.Data", "EncryptedStorage.Data\EncryptedStorage.Data.csproj", "{AE43A75E-6CA0-4610-B7FE-F1E973747EC7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1BFC4ED0-057E-4D6E-A049-BBE95061E1D4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1BFC4ED0-057E-4D6E-A049-BBE95061E1D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1BFC4ED0-057E-4D6E-A049-BBE95061E1D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1BFC4ED0-057E-4D6E-A049-BBE95061E1D4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{30775024-714A-4F97-BC63-C65FABD03DE6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{30775024-714A-4F97-BC63-C65FABD03DE6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{30775024-714A-4F97-BC63-C65FABD03DE6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{30775024-714A-4F97-BC63-C65FABD03DE6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AE43A75E-6CA0-4610-B7FE-F1E973747EC7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AE43A75E-6CA0-4610-B7FE-F1E973747EC7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AE43A75E-6CA0-4610-B7FE-F1E973747EC7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AE43A75E-6CA0-4610-B7FE-F1E973747EC7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B79C6951-E511-44AA-939E-47A139BCF912}
+	EndGlobalSection
+EndGlobal
